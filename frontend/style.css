@@ -1,0 +1,397 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 30px;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #312e81);
+    color: #f8fafc;
+    font: 16px "Segoe UI", Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 30px;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25),inset 0 1px rgba(255,255,255,.15);
+    backdrop-filter: blur(10px);
+}
+
+.input,
+.employees {
+    padding: 30px;
+    margin-top: 25px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    backdrop-filter: blur(12px);
+}
+
+.input h2,
+.employees h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.first_line,
+.second_line,
+.third_line {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 80px;
+    margin: 20px 0;
+}
+
+.first_line > div,
+.second_line > div,
+.third_line > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+label {
+    width: 120px;
+    flex-shrink: 0;
+    font-size: 17px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+input,
+select {
+    width: 100%;
+    max-width: 240px;
+    height: 42px;
+    padding: 8px 12px;
+    font-size: 16px;
+    color: #1e293b;
+    background: #fff;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all .25s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96,165,250,.25);
+    transform: translateY(-1px);
+}
+
+input:hover,
+select:hover {
+    border-color: #93c5fd;
+}
+
+.department select,
+.role select {
+    width: 240px;
+}
+
+button {
+    display: block;
+    margin: 30px auto 5px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(37,99,235,.35);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #60a5fa, #2563eb);
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(37,99,235,.45);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.employees > input,
+.employees .search input {
+    width: 250px;
+    margin: 10px 0 20px;
+}
+
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    color: #f8fafc;
+    background: rgba(255,255,255,.05);
+    border-radius: 12px;
+}
+
+th {
+    padding: 15px 12px;
+    background: #111827;
+    color: #fff;
+    border: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    color: #e2e8f0;
+}
+
+tbody {
+    text-align: center;
+}
+
+tbody tr {
+    transition: background .2s ease;
+}
+
+tbody tr:hover {
+    background: rgba(96,165,250,.15);
+}
+
+.delete-employee {
+    padding: 30px;
+    margin-top: 25px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+}
+
+.delete-employee h2 {
+    margin-bottom: 20px;
+}
+
+.delete-employee form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.delete-employee input {
+    width: 200px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search-container label {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.search-container input {
+    width: 250px;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background: #3b82f6;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+
+/* ===== BEAUTIFUL EDIT EMPLOYEE CARD ===== */
+
+.edit-section {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 32px;
+    background: linear-gradient(
+        145deg,
+        rgba(30, 41, 80, 0.98),
+        rgba(23, 37, 84, 0.98)
+    );
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.edit-header {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.edit-badge {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: rgba(59, 130, 246, 0.18);
+    color: #93c5fd;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.edit-header h2 {
+    margin-bottom: 8px;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.edit-header p {
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.edit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.edit-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.edit-field label {
+    width: auto;
+    font-size: 15px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.edit-field input,
+.edit-field select {
+    width: 100%;
+    max-width: none;
+    height: 48px;
+    padding: 0 14px;
+    color: #f8fafc;
+    background: #111827;
+    border: 1px solid #475569;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.edit-field select option {
+    background: #111827;
+    color: #ffffff;
+}
+
+.edit-field input::placeholder {
+    color: #94a3b8;
+}
+
+.edit-field input:focus,
+.edit-field select:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.18);
+    transform: none;
+}
+
+.edit-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.edit-actions button {
+    display: inline-block;
+    margin: 0;
+    min-width: 140px;
+    padding: 13px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.edit-actions .save-btn {
+    color: #ffffff;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.edit-actions .save-btn:hover {
+    background: linear-gradient(135deg, #60a5fa, #2563eb);
+}
+
+.edit-actions .cancel-btn {
+    color: #e2e8f0;
+    background: #334155;
+    box-shadow: none;
+}
+
+.edit-actions .cancel-btn:hover {
+    background: #475569;
+}
+
+/* Responsive layout for phones */
+@media (max-width: 650px) {
+    .edit-section {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .edit-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .edit-header h2 {
+        font-size: 25px;
+    }
+
+    .edit-actions {
+        flex-direction: column;
+    }
+
+    .edit-actions button {
+        width: 100%;
+    }
+}

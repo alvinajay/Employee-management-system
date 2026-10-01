@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee Management System</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Employee Management System</h1>
+        <section class="input">
+            <h2>Add Employee</h2>
+            <form id="employeeinput">
+                <div class="first_line">
+                    <div class="first_name">
+                        <label>First Name</label>
+                        <input type="text" name="first_name" required>
+                    </div>
+                    <div class="last_name">
+                        <label>Last Name</label>
+                        <input type="text" name="last_name" required>
+                    </div>
+                </div>
+                <div class="second_line">
+                    <div class="Age">
+                        <label>Age</label>
+                        <input type="number" name="age" required>
+                    </div>
+                    <div class="department">
+                        <label for="department">Department</label>
+                        <select id="department" name="dept_id">
+                            <option value="1">Engineering</option>
+                            <option value="2">Hr</option>
+                            <option value="3">Finance</option>
+                            <option value="4">Data</option>
+                        </select>
+                    </div>   
+                </div>
+                <div class="third_line">
+                    <div class="role">
+                        <label for="role">Role</label>
+                        <select id="role" name="role_id">
+                            <option value="1">Backend Developer</option>
+                            <option value="2">Frontend Developer</option>
+                            <option value="3">Data Analyst</option>
+                            <option value="4">Manager</option>
+                            <option value="5">HR Executive</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit">Add Employee</button>
+            </form>
+        </section>
+        <section class="employees">
+            <h2>Employees</h2>
+            <form id="employeesearch">
+                <div class="search-container">
+                    <label for="searchId">Employee ID</label>
+                    <input type="number" id="searchId">
+                    <button type="button" onclick="searchEmployee()">Search</button>
+                    <button type="button" id="editBtn" onclick="showEditForm()" style="display:none;">Edit</button>
+                </div>
+            </form>
+                        <table id="employeetable">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>First name</th>
+                                    <th>Last name</th>
+                                    <th>Age</th>
+                                    <th>Dept name</th>
+                                    <th>Role name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="Tablebody">
+                            </tbody>
+                        </table>
+        </section>
+        
+
+<section id="editSection" class="edit-section" style="display:none;">
+    <div class="edit-header">
+        <div>
+            <span class="edit-badge">EMPLOYEE DETAILS</span>
+            <h2>Edit Employee</h2>
+            <p>Update employee information and save your changes.</p>
+        </div>
+    </div>
+
+    <form id="editForm">
+        <input type="hidden" id="editId">
+
+        <div class="edit-grid">
+            <div class="edit-field">
+                <label for="editFirstName">First Name</label>
+                <input type="text" id="editFirstName"
+                       placeholder="Enter first name" required>
+            </div>
+
+            <div class="edit-field">
+                <label for="editLastName">Last Name</label>
+                <input type="text" id="editLastName"
+                       placeholder="Enter last name" required>
+            </div>
+
+            <div class="edit-field">
+                <label for="editAge">Age</label>
+                <input type="number" id="editAge"
+                       min="1" placeholder="Enter age" required>
+            </div>
+
+            <div class="edit-field">
+                <label for="editDepartment">Department</label>
+                <select id="editDepartment" required>
+                    <option value="1">Engineering</option>
+                    <option value="2">HR</option>
+                    <option value="3">Finance</option>
+                    <option value="4">Data</option>
+                </select>
+            </div>
+
+            <div class="edit-field">
+                <label for="editRole">Role</label>
+                <select id="editRole" required>
+                    <option value="1">Backend Developer</option>
+                    <option value="2">Frontend Developer</option>
+                    <option value="3">Data Analyst</option>
+                    <option value="4">Manager</option>
+                    <option value="5">HR Executive</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="edit-actions">
+            <button type="submit" class="save-btn">
+                Save Changes
+            </button>
+
+            <button type="button" class="cancel-btn"
+                    onclick="closeEditForm()">
+                Cancel
+            </button>
+        </div>
+    </form>
+</section>
+        <section class="delete-employee">
+            <h2>Delete Employee</h2>
+        
+            <form id="deleteEmployeeForm">
+                <label for="deleteId">Employee ID</label>
+                <input type="number" id="deleteId"required>
+                <button type="submit">Delete Employee</button>
+            </form>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
